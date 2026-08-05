@@ -13,6 +13,10 @@ const sequelizeInstance = new Sequelize(
         port: process.env.MY_SQL_PORT,
         dialectOptions: {
             connectTimeout: 10000,
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
         },
         pool: {
             max: parseInt(process.env.POOL_MAX),
