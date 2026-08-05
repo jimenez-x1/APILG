@@ -45,7 +45,7 @@ db.maestro = require('../models/maestroModels')(sequelizeInstance);
 db.padre = require('../models/padreModels')(sequelizeInstance);
 db.pagos = require('../models/pagosModels')(sequelizeInstance);
 db.gradoClase = require('../models/gradoClaseModels')(sequelizeInstance);
-db.user = require('../models/userModels')(sequelizeInstance);
+db.user = require('../models/UserModels')(sequelizeInstance);
 db.archivo = require('../models/archivoModels')(sequelizeInstance, Sequelize);
 
 /* =======================
