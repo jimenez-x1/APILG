@@ -171,8 +171,17 @@ async function generarConstanciaMatricula(req, res) {
 
         doc.font('Helvetica').text(
             `QUE SEGÚN CONSTA EN EL LIBRO RESPECTIVO DE ESTA INSTITUCIÓN, SE ENCUENTRA REGISTRADO(A) ` +
-            `EL (LA) ALUMNO(A) ${nombreCompleto}, CON NÚMERO DE IDENTIDAD ${alumno.DNI}, ` +
-            `DEBIDAMENTE MATRICULADO(A) EN ${gradoTexto}${seccion ? `, SECCIÓN "${seccion}"` : ''}, ` +
+            `EL (LA) ALUMNO(A) `,
+            { align: 'justify', continued: true }
+        );
+        doc.font('Helvetica-Bold').text(nombreCompleto, { continued: true });
+        doc.font('Helvetica').text(
+            `, CON NÚMERO DE IDENTIDAD `,
+            { continued: true }
+        );
+        doc.font('Helvetica-Bold').text(alumno.DNI, { continued: true });
+        doc.font('Helvetica').text(
+            `, MATRICULADO(A) EN ${gradoTexto}${seccion ? `, SECCIÓN "${seccion}"` : ''}, ` +
             `CORRESPONDIENTE AL AÑO LECTIVO ${anio}.`,
             { align: 'justify' }
         );

@@ -35,6 +35,16 @@ module.exports = (sequelize) => {
       allowNull: true,
     },
 
+    Ocupacion: {
+      type: DataTypes.STRING(150),
+      allowNull: true,
+    },
+
+    TipoResponsable: {
+      type: DataTypes.ENUM('Padre', 'Madre', 'Encargado'),
+      allowNull: true,
+    },
+
   }, {
     tableName: 'padre',
     timestamps: false,

@@ -45,7 +45,9 @@ async function findAll(req, res) {
             Apellido: req.body.Apellido,
             Telefono: req.body.Telefono || null,
             Correo: req.body.Correo || null,
-            Direccion: req.body.Direccion || null
+            Direccion: req.body.Direccion || null,
+            Ocupacion: req.body.Ocupacion || null,
+            TipoResponsable: req.body.TipoResponsable || null
 
         });
 
@@ -88,7 +90,9 @@ async function updatePadre(req, res) {
             Apellido: req.body.Apellido,
             Telefono: req.body.Telefono || null,
             Correo: req.body.Correo || null,
-            Direccion: req.body.Direccion || null
+            Direccion: req.body.Direccion || null,
+            Ocupacion: req.body.Ocupacion || null,
+            TipoResponsable: req.body.TipoResponsable || null
 
         }, {
 
@@ -166,7 +170,7 @@ async function buscarPadre(req, res) {
                     { Apellido: { [Op.like]: `%${texto}%` } }
                 ]
             },
-            attributes: ["DNI", "Nombre", "Apellido"],
+            attributes: ["DNI", "Nombre", "Apellido", "Ocupacion", "TipoResponsable"],
             limit: 10
         });
 
